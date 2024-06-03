@@ -1,20 +1,31 @@
 /* Cabecera */
+/*flexbox permite una mejor adaptacion de elementos*/
 .cabecera__container{
-    display: flex;
+    display: flex;                          
     justify-content: space-between;
     align-items: center;
-    position: fixed;
-    top: 0;
+    position: fixed;            /*fijo al scrollear */
+    top: 0;                     /*coordenada donde quedara fija la cabecera*/
+}
+
+/*                          EL SIGUIENTE CODIGO NO PERMITE QUE SE AJUSTEN LOS ELEMENTOS
+.logo__item{
+    margin-right: 200px;
+}
+
+.cabecera__buscar__item{
+    margin-right: 200px;
 }
 
 .cabecera__buscar__item{
     display: none;
-}
+} */
+
 
 /* Menu */
-
+    /*version movil*/
 .menu__container{
-    position: fixed;
+    position: fixed;        
     bottom: 0%;
     height: 75px;
     width: 100%;
@@ -33,10 +44,10 @@
 .menu__itens{
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 5px;       /*separacion*/
 }
 
-
+    /*pseudoclase para trabajar con elementos de lista*/
 .menu__lista:nth-child(2),
 .menu__lista:nth-child(3),
 .menu__lista:nth-child(4){
@@ -46,11 +57,11 @@
 
 /* Seccion superior */
 .superior__seccion__container{
-    display: flex;
-    align-items: center;
-    white-space: nowrap;
-    overflow: scroll;
-    gap: 15px;
+    display: flex;                      /*posicionando elementos uno al lado de otro*/
+    align-items: center;                /*colocando items en el centro del contenedor*/
+    white-space: nowrap;                /*texto alineado y si es mas de una palabra, no dividi  r*/
+    overflow: scroll;                   /*barra de deslizamiento en este menu superior */
+    gap: 15px;                          /*espacio entre elementos */
 
 }
 
@@ -59,14 +70,14 @@
 .videos__item{
     height: 303px;
     width: 280px;
-    flex-grow: 1;
+    flex-grow: 1;       /*es una propiedad para controlar el crecimiento y la distribución de los elementos flex dentro de un contenedor.*/
 }
 
 .videos__container{
     display:flex;
     flex-wrap: wrap;
-    gap: 10px;
-    
+    gap: 20px;                  /*separacion entre videos*/
+     
 
 }
 
@@ -97,23 +108,23 @@
 }
 
 
-/* Rodapie */
+/* Rodapie */   
 .rodapie__container{
-    display: flex;
-    /* flex-direction: column;
+    display: flex;                  /*acomodando elementos*/
+    /* flex-direction: column;  
    flex-wrap: wrap; */
-   flex-flow: column wrap;
+   flex-flow: column wrap;          /*esta linea resume las dos anteriores*/
     
    
 }
 
 
-
+/*EN ESTE ESPACIO SE ESTABLECEN TAMAÑOS PARA IR MOSTRANDO ELEMENTOS */
 @media (min-width:834px) {
 
     /* Cabecera */
     .cabecera__buscar__item{
-        display: block
+        display: block                  /*dispositivos de al menos 834px de ancho */
     }
     /* Desafío Menú Lateral */
     .menu__container {
@@ -133,7 +144,7 @@
 
     /* Rodapie */
     .rodapie__container{
-        justify-content: space-between;
+        justify-content: space-between;         /*respetando espacios entre columnas*/
     }
    
 
@@ -141,7 +152,7 @@
 
 
 
-@media (min-width:1440px ){
+@media (min-width:1440px ){              /*dispositivos de al menos 1440px de ancho */
 
     .menu__container{
         width: 239px;
@@ -172,6 +183,7 @@
         align-items: center;
     }
 
+    /*si se utilizara un lector de pantalla, no se recomienda usar la sigioente propiedad para ordenar items -> order*/
     .videojuegos{
         order: 3;
     }
